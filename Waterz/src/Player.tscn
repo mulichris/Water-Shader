@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/models/Sail ship.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://src/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/Camera.gd" type="Script" id=3]
+[ext_resource path="res://assets/materials/boat_wood.material" type="Material" id=4]
+[ext_resource path="res://assets/materials/darkwoodbrowm.material" type="Material" id=5]
+[ext_resource path="res://assets/materials/fabric.material" type="Material" id=6]
+[ext_resource path="res://assets/materials/lightwood.material" type="Material" id=7]
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 4 )
+material/1 = ExtResource( 6 )
+material/2 = ExtResource( 4 )
+material/3 = ExtResource( 6 )
+material/4 = ExtResource( 4 )
+material/5 = ExtResource( 6 )
+material/6 = ExtResource( 4 )
+material/7 = ExtResource( 6 )
+material/8 = ExtResource( 5 )
+material/9 = ExtResource( 7 )
+material/10 = ExtResource( 7 )
+material/11 = null
+
+[node name="Target" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Target"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23802, 4.32117 )
+script = ExtResource( 3 )
